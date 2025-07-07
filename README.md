@@ -1,3 +1,7 @@
+### Feminist E-keyboard 女性主义输入法
+<img width="771" alt="Screenshot 2025-07-07 at 22 49 56" src="https://github.com/user-attachments/assets/ad977d14-a599-4ff1-ac19-c165a649e28a" />
+
+### Below are the official configuration guidance
 ## Rime 鼠须管（Squirrel）朙月拼音、小鹤双拼、自然码双拼配置详解
 
 - 欢迎加入 [Rime 鼠须管电报群](https://t.me/rimeim)
@@ -12,10 +16,6 @@
 * 动态输入时间、日期、星期
 * 速度快、开源、保护隐私、自定义强
 
-
-### [👏 出售美国实体卡、GV、Gmail、ChatGPT、Apple ID、礼品卡 👏](https://github.com/ssnhd/googlevoice)
-
-[![](https://i.imgur.com/RELjhoN.png)](https://github.com/ssnhd/googlevoice)
 
 
 ## 安装
