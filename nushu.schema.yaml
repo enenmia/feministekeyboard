@@ -1,0 +1,83 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: nushu
+  name: 女书
+  version: "2020.07.22"
+  author:
+    - sgalal <sgalal.me@outlook.com>
+  description: |-
+    使用江永方言拼音输入 Unicode 编码的 396 个女书字符。
+
+switches:
+  - name: ascii_mode
+    states: [ 女书, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ ，。, ，． ]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  delimiter: " '"
+  algebra:
+    - "xform/^tc([aiueoyw])/j$1/"                # tc -> j
+    - "xform/^tch([aiueoyw])/q$1/"               # tch -> q
+    - "xform/^c([aiueoyw])/x$1/"                 # c -> x
+    - "xform/^ts([aiueoyw])/z$1/"                # ts -> z
+    - "xform/^tsh([aiueoyw])/c$1/"               # tsh -> c
+    - "xform/^p([aiueoyw])/b$1/"                 # p -> b
+    - "xform/^ph([aiueoyw])/p$1/"                # ph -> p
+    - "xform/^t([aiueoyw])/d$1/"                 # t -> d
+    - "xform/^th([aiueoyw])/t$1/"                # th -> t
+    - "xform/^k([aiueoyw])/g$1/"                 # k -> g
+    - "xform/^kh([aiueoyw])/k$1/"                # kh -> k
+    - "abbrev/^([a-z]).+$/$1/"                   # 首字母簡拼
+    - "abbrev/^(ng|nj).+$/$1/"                   # 双字母 ng 与 nj 簡拼
+    - "derive/^([a-z]+)[1-5]{1,2}$/$1/"          # 兼容無聲調拼音
+    - xlit/12345/¹²³⁴⁵/
+
+translator:
+  dictionary: nushu
+  spelling_hints: 20
+  comment_format:
+    - "xform/(^| )tc([aiueoyw])/$1j$2/"          # tc -> j
+    - "xform/(^| )tch([aiueoyw])/$1q$2/"         # tch -> q
+    - "xform/(^| )c([aiueoyw])/$1x$2/"           # c -> x
+    - "xform/(^| )ts([aiueoyw])/$1z$2/"          # ts -> z
+    - "xform/(^| )tsh([aiueoyw])/$1c$2/"         # tsh -> c
+    - "xform/(^| )p([aiueoyw])/$1b$2/"           # p -> b
+    - "xform/(^| )ph([aiueoyw])/$1p$2/"          # ph -> p
+    - "xform/(^| )t([aiueoyw])/$1d$2/"           # t -> d
+    - "xform/(^| )th([aiueoyw])/$1t$2/"          # th -> t
+    - "xform/(^| )k([aiueoyw])/$1g$2/"           # k -> g
+    - "xform/(^| )kh([aiueoyw])/$1k$2/"          # kh -> k
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default

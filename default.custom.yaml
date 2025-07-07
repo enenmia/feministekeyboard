@@ -1,0 +1,15 @@
+__patch:
+# Rx: custom:set:config=default,key=installed_from,value=nushu-script/rime-nushu {
+  - patch/+:
+      installed_from: nushu-script/rime-nushu
+# }
+# Rx: custom:add:schema=nushu {
+  - patch/+:
+      schema_list/+/+:
+        - schema: nushu
+# }
+# Rx: custom:add:schema=luna_pinyin_nushu {
+  - patch/+:
+      schema_list/+/+:
+        - schema: luna_pinyin_nushu
+# }

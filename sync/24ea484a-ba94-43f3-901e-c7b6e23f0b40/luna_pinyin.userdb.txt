@@ -1,0 +1,19 @@
+# Rime user dictionary
+#@/db_name	luna_pinyin
+#@/db_type	userdb
+#@/rime_version	1.8.5
+#@/tick	11
+#@/user_id	24ea484a-ba94-43f3-901e-c7b6e23f0b40
+dao gu 	搗鼓	c=1 d=0.985112 t=11
+ni hao 	你好	c=1 d=0.965605 t=11
+nv 	女	c=1 d=0.99005 t=11
+o 	噢	c=1 d=0.970446 t=11
+shu 	書	c=1 d=0.995012 t=11
+shu ru fa 	輸入法	c=1 d=1.0593 t=11
+shu ru fa zhong 	輸入法中	c=1 d=0.99005 t=11
+shu xu guan 	鼠鬚管	c=3 d=2.97521 t=11
+wo de 	我的	c=0 d=0.0970446 t=11
+yong 	用	c=0 d=0.0970446 t=11
+zai 	在	c=0 d=0.0970446 t=11
+zai yong wo de 	在用我的	c=1 d=0.97531 t=11
+zhong 	中	c=0 d=0.0985112 t=11

@@ -1,0 +1,6 @@
+# Rime user dictionary
+#@/db_name	nushu
+#@/db_type	userdb
+#@/rime_version	1.11.2
+#@/tick	0
+#@/user_id	24ea484a-ba94-43f3-901e-c7b6e23f0b40

@@ -1,0 +1,176 @@
+__build_info:
+  rime_version: 1.11.2
+  timestamps:
+    default: 1735048857
+    default.custom: 1707904544
+    nushu.custom: 0
+    nushu.schema: 1707301722
+engine:
+  filters:
+    - uniquifier
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+key_binder:
+  bindings:
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: "Alt+Left", send: "Shift+Left", when: composing}
+    - {accept: "Alt+Right", send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+3", toggle: ascii_punct, when: always}
+    - {accept: "Control+Shift+numbersign", toggle: ascii_punct, when: always}
+    - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
+    - {accept: "Control+Shift+dollar", toggle: traditionalization, when: always}
+    - {accept: KP_0, send: 0, when: composing}
+    - {accept: KP_1, send: 1, when: composing}
+    - {accept: KP_2, send: 2, when: composing}
+    - {accept: KP_3, send: 3, when: composing}
+    - {accept: KP_4, send: 4, when: composing}
+    - {accept: KP_5, send: 5, when: composing}
+    - {accept: KP_6, send: 6, when: composing}
+    - {accept: KP_7, send: 7, when: composing}
+    - {accept: KP_8, send: 8, when: composing}
+    - {accept: KP_9, send: 9, when: composing}
+    - {accept: KP_Decimal, send: period, when: composing}
+    - {accept: KP_Multiply, send: asterisk, when: composing}
+    - {accept: KP_Add, send: plus, when: composing}
+    - {accept: KP_Subtract, send: minus, when: composing}
+    - {accept: KP_Divide, send: slash, when: composing}
+  import_preset: default
+  select_first_character: bracketleft
+  select_last_character: bracketright
+menu:
+  page_size: 5
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": "！"
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": "¥"
+    "%": "%"
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": "*"
+    "+": "+"
+    ",": "，"
+    "-": "-"
+    .: "。"
+    "/": "/"
+    ":": "："
+    ";": "；"
+    "<": "《"
+    "=": "="
+    ">": "》"
+    "?": "？"
+    "@": "@"
+    "[": "【"
+    "\\": "、"
+    "]": "】"
+    "^": "……"
+    _: "——"
+    "`": "`"
+    "{": "「"
+    "|": "|"
+    "}": "」"
+    "~": "~"
+  import_preset: default
+schema:
+  author:
+    - "sgalal <sgalal.me@outlook.com>"
+  description: "使用江永方言拼音输入 Unicode 编码的 396 个女书字符。"
+  name: "女书"
+  schema_id: nushu
+  version: 2020.07.22
+speller:
+  algebra:
+    - "xform/^tc([aiueoyw])/j$1/"
+    - "xform/^tch([aiueoyw])/q$1/"
+    - "xform/^c([aiueoyw])/x$1/"
+    - "xform/^ts([aiueoyw])/z$1/"
+    - "xform/^tsh([aiueoyw])/c$1/"
+    - "xform/^p([aiueoyw])/b$1/"
+    - "xform/^ph([aiueoyw])/p$1/"
+    - "xform/^t([aiueoyw])/d$1/"
+    - "xform/^th([aiueoyw])/t$1/"
+    - "xform/^k([aiueoyw])/g$1/"
+    - "xform/^kh([aiueoyw])/k$1/"
+    - "abbrev/^([a-z]).+$/$1/"
+    - "abbrev/^(ng|nj).+$/$1/"
+    - "derive/^([a-z]+)[1-5]{1,2}$/$1/"
+    - "xlit/12345/¹²³⁴⁵/"
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  delimiter: " '"
+switches:
+  - name: ascii_mode
+    states: ["女书", "西文"]
+  - name: full_shape
+    states: ["半角", "全角"]
+  - name: ascii_punct
+    states: ["，。", "，．"]
+translator:
+  comment_format:
+    - "xform/(^| )tc([aiueoyw])/$1j$2/"
+    - "xform/(^| )tch([aiueoyw])/$1q$2/"
+    - "xform/(^| )c([aiueoyw])/$1x$2/"
+    - "xform/(^| )ts([aiueoyw])/$1z$2/"
+    - "xform/(^| )tsh([aiueoyw])/$1c$2/"
+    - "xform/(^| )p([aiueoyw])/$1b$2/"
+    - "xform/(^| )ph([aiueoyw])/$1p$2/"
+    - "xform/(^| )t([aiueoyw])/$1d$2/"
+    - "xform/(^| )th([aiueoyw])/$1t$2/"
+    - "xform/(^| )k([aiueoyw])/$1g$2/"
+    - "xform/(^| )kh([aiueoyw])/$1k$2/"
+  dictionary: nushu
+  spelling_hints: 20
