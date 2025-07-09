@@ -1,4 +1,4 @@
-## Welcome to the Codebase of the Fisr Chinese Feminist E-keyboard! 
+## Welcome to the Codebase of the First Chinese Feminist E-keyboard! 
 <img width="771" alt="Screenshot 2025-07-07 at 22 49 56" src="https://github.com/user-attachments/assets/ad977d14-a599-4ff1-ac19-c165a649e28a" />
 
 Below are the official configuration guidance
